@@ -19,6 +19,7 @@ export default {
 body {
     font-family: 'DM Sans', sans-serif;
     color: var(--sl-color-gray-30);
+    margin: 0;
 }
 
 h1,  p {
@@ -63,5 +64,13 @@ h1,  p {
 
 .flex {
     display: flex;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.full-width {
+    width: 100%;
 }
 </style>

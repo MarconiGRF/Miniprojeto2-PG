@@ -3,11 +3,11 @@
         <div class="text-align-center title">
             <h2 class="inline">{{ title }}</h2> <h2 class="bullet inline">•</h2> <h2 class="blue-color inline">{{ subtitle }}</h2>
         </div>
+
         <div class="controllers">
-            <CurveController/>
-            <CurveController/>
-            <CurveController/>
+            <CurveController title="CURVAS" v-bind:units="units"/>
         </div>
+
         <p class="text-align-center full-width">
             <a class="blue-color" href="https://github.com/MarconiGRF/Miniprojeto2-PG" target="_blank" rel="noopener">Código fonte</a>.
         </p>
@@ -16,11 +16,23 @@
 
 <script>
 import CurveController from './CurveController';
+import ControlUnit from "@/components/ControlUnit";
 
 export default {
     name: 'ControlPanel',
     components: {
         CurveController
+    },
+    data: function() {
+      return {
+          units: [
+              {
+                  component: ControlUnit,
+                  icon: { name: 'cursor', type: 'filled', size: '24'},
+                  text: 'Selecionar',
+                  action: function() {console.log('Ready, set, action!');} }
+          ]
+      }
     },
     props: {
         title: String,

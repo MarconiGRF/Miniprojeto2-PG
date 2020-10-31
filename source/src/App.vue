@@ -70,6 +70,10 @@ h1,  p {
     flex-direction: column;
 }
 
+.align-items-center {
+    align-items: center;
+}
+
 .full-width {
     width: 100%;
 }

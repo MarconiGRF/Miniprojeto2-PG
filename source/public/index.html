@@ -1,17 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title>Miniprojeto 2 - Curvas de Bézier</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+
+    <!-- Fonte -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Shoelace Library -->
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.22/dist/shoelace/shoelace.css">
+    <script type="module"
+      src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.22/dist/shoelace/shoelace.esm.js"></script>
   </head>
+
   <body>
     <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+      <strong>
+        Infelizmente, o <%= htmlWebpackPlugin.options.title %> não funciona corretamente sem o JavaScript habilitado.
+        Por favor, ative-o para continuar.
+      </strong>
     </noscript>
+    
     <div id="app"></div>
-    <!-- built files will be auto injected -->
+    <!-- os arquivos compilados serão injetados automaticamente -->
   </body>
 </html>

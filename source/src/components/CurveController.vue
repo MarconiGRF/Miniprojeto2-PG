@@ -3,9 +3,10 @@
         <h5>{{ title }}</h5>
         <div class="flex units" v-if="units">
             <component v-for="controlUnit in units"
-                       v-bind:key="controlUnit.id"
-                       v-bind:is="controlUnit.component"
-                       :text="controlUnit.text" :icon="controlUnit.icon"
+                       :key="controlUnit.id"
+                       :is="controlUnit.component"
+                       :text="controlUnit.text"
+                       :icon="controlUnit.icon"
                        :action="controlUnit.action">
             </component>
         </div>

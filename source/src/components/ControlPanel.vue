@@ -29,16 +29,18 @@ export default {
       return {
           units: [
               {
+                  action: function() { console.log('Ready, set, select!'); },
                   component: ControlUnit,
                   icon: { name: 'cursor', type: 'filled', size: '24'},
-                  text: 'Selecionar',
-                  action: function() {console.log('Ready, set, select!');}
+                  id: 1,
+                  text: 'Selecionar'
               },
               {
+                  action: function() { console.log('Ready, set, new!'); },
                   component: ControlUnit,
                   icon: { name: 'add', type: 'filled', size: '24'},
-                  text: 'Nova',
-                  action: function() {console.log('Ready, set, new!');}
+                  id: 2,
+                  text: 'Nova'
               }
           ]
       }

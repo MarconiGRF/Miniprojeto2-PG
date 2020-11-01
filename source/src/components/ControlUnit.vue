@@ -1,6 +1,6 @@
 <template>
-    <div class="unit flex column align-items-center" @click="action">
-        <img v-bind:src="getIcon(icon.name, icon.size, icon.type)"/>
+    <div class="unit flex column align-items-center" v-on:click="action">
+        <img :src="getIcon(icon.name, icon.size, icon.type)"/>
         <p class="small-text">{{ text }}</p>
     </div>
 </template>

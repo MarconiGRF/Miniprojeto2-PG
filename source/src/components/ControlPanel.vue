@@ -5,9 +5,9 @@
         </div>
 
         <div class="controllers">
-            <CurveController title="CURVAS" v-bind:units="units"/>
-            <CurveController title="PONTOS DE CONTROLE"/>
-            <CurveController title="VISUALIZAÇÃO"/>
+            <CurveController :title="controllerNames.curves" :units="units"/>
+            <CurveController :title="controllerNames.controlPoints"/>
+            <CurveController :title="controllerNames.visualization"/>
         </div>
 
         <p class="text-align-center full-width">
@@ -27,6 +27,11 @@ export default {
     },
     data: function() {
       return {
+          controllerNames: {
+              curves: 'CURVAS',
+              controlPoints: 'PONTOS DE CONTROLE',
+              visualization: 'VISUALIZAÇÃO'
+          },
           units: [
               {
                   action: function() { console.log('Ready, set, select!'); },

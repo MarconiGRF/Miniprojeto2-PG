@@ -6,6 +6,8 @@
 
         <div class="controllers">
             <CurveController title="CURVAS" v-bind:units="units"/>
+            <CurveController title="PONTOS DE CONTROLE"/>
+            <CurveController title="VISUALIZAÇÃO"/>
         </div>
 
         <p class="text-align-center full-width">

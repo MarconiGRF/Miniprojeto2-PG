@@ -1,7 +1,7 @@
 <template>
     <div class="unit flex column align-items-center" @click="action">
         <img v-bind:src="getIcon(icon.name, icon.size, icon.type)"/>
-        <p>{{ text }}</p>
+        <p class="small-text">{{ text }}</p>
     </div>
 </template>
 
@@ -26,7 +26,7 @@ export default {
 .unit {
     max-height: 4em;
     width: 4em;
-    margin-right: 1em;
+    margin: .3em 1em 0 0;
 }
 
 img {
@@ -37,6 +37,5 @@ img {
 
 p {
     margin: 0;
-    font-size: 12px;
 }
 </style>

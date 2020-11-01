@@ -77,4 +77,8 @@ h1,  p {
 .full-width {
     width: 100%;
 }
+
+.small-text {
+    font-size: 12px;
+}
 </style>

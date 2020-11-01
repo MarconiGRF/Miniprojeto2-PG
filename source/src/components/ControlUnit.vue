@@ -25,7 +25,8 @@ export default {
 <style scoped>
 .unit {
     max-height: 4em;
-    max-width: 4em;
+    width: 4em;
+    margin-right: 1em;
 }
 
 img {

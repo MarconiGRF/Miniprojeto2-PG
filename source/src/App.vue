@@ -1,16 +1,19 @@
 <template>
     <div id="app">
         <ControlPanel title="Miniprojeto 2" subtitle="Curvas de Bézier"/>
+        <CanvasPanel />
     </div>
 </template>
 
 <script>
-import ControlPanel from './components/ControlPanel.vue'
+import ControlPanel from './components/ControlPanel.vue';
+import CanvasPanel from './components/CanvasPanel.vue';
 
 export default {
     name: 'MiniProject2',
     components: {
-        ControlPanel
+        ControlPanel,
+        CanvasPanel
     }
 }
 </script>

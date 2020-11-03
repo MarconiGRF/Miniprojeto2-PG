@@ -7,7 +7,8 @@
                        :is="controlUnit.component"
                        :text="controlUnit.text"
                        :icon="controlUnit.icon"
-                       :action="controlUnit.action">
+                       :action="controlUnit.action"
+                       @[controlUnit.action]="$emit($event, $event)">
             </component>
         </div>
         <div class="flex units" v-if="!units">

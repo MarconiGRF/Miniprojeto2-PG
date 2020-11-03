@@ -5,7 +5,7 @@
         </div>
 
         <div class="controllers">
-            <CurveController :title="controllerNames.curves" :units="units"/>
+            <CurveController :title="controllerNames.curves" :units="units" @add="$emit('canvasControl', $event)" @select="$emit('canvasControl', $event)"/>
             <CurveController :title="controllerNames.controlPoints"/>
             <CurveController :title="controllerNames.visualization"/>
         </div>
@@ -34,14 +34,14 @@ export default {
           },
           units: [
               {
-                  action: function() { console.log('Ready, set, select!'); },
+                  action: 'select',
                   component: ControlUnit,
                   icon: { name: 'cursor', type: 'filled', size: '24'},
                   id: 1,
                   text: 'Selecionar'
               },
               {
-                  action: function() { console.log('Ready, set, new!'); },
+                  action: 'add',
                   component: ControlUnit,
                   icon: { name: 'add', type: 'filled', size: '24'},
                   id: 2,

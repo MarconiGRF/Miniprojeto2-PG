@@ -116,8 +116,14 @@ export default {
 
             return new Curve(controlPoints, appearance);
         },
-        addCurve: function(curve) {
-            this.curves.push(curve);
+        handleEvent: function(event) {
+            if (event === 'add') {
+                this.curves.push(this.getNewCurve());
+            } else if (event === 'select') {
+                console.log("Select event!")
+            }
+
+            this.renderFrame();
         }
     }
 }

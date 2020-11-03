@@ -1,7 +1,7 @@
 <template>
     <div id="app" class="flex">
-        <ControlPanel title="Miniprojeto 2" subtitle="Curvas de Bézier"/>
-        <CanvasPanel />
+        <ControlPanel title="Miniprojeto 2" subtitle="Curvas de Bézier" @canvasControl="emitToCanvas($event)"/>
+        <CanvasPanel ref="canvas"/>
     </div>
 </template>
 
@@ -11,6 +11,11 @@ import CanvasPanel from './components/CanvasPanel.vue';
 
 export default {
     name: 'MiniProject2',
+    methods: {
+        emitToCanvas(event) {
+            this.$refs.canvas.handleEvent(event);
+        }
+    },
     components: {
         ControlPanel,
         CanvasPanel

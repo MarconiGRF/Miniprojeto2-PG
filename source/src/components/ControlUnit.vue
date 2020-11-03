@@ -1,5 +1,5 @@
 <template>
-    <div class="unit flex column align-items-center" v-on:click="action">
+    <div class="unit flex column align-items-center" @click="$emit(action, action)">
         <img :src="getIcon(icon.name, icon.size, icon.type)"/>
         <p class="small-text">{{ text }}</p>
     </div>
@@ -15,7 +15,7 @@ export default {
         }
     },
     props: {
-        action: { Type: Function },
+        action: String,
         icon: Object,
         text: String
     }

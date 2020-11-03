@@ -1,5 +1,5 @@
 <template>
-    <div id="app">
+    <div id="app" class="flex">
         <ControlPanel title="Miniprojeto 2" subtitle="Curvas de Bézier"/>
         <CanvasPanel />
     </div>

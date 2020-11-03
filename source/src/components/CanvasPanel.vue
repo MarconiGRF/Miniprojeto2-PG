@@ -3,32 +3,11 @@
 </template>
 
 <script>
-// type ElementAppearanceSettings = {
-//     color: string,
-//     thickness: number
-// };
-// type CanvasPanelRenderingSettings = {
-//     showCurves: boolean,
-//     showControlPoints: boolean,
-//     showControlPolygons: boolean,
-//     curvesEvaluation: number
-// };
-// type Point = {
-//     x: number,
-//     y: number
-// };
-// type Curve = {
-//     controlPoints: Point[],
-//     appearance: {
-//         curve: ElementAppearanceSettings
-//         controlPoints: ElementAppearanceSettings
-//         controlPolygons: ElementAppearanceSettings
-//     }
-// };
-// type CanvasSelectEventDetails = {
-//     curveSelected: Curve,
-//     pointSelected: Point
-// }
+
+import CanvasPanelRenderingSettings from "@/classes/CanvasPanelRenderingSettings";
+import Point from "@/classes/Point";
+import ElementAppearanceSettings from "@/classes/ElementAppearanceSettings";
+import Curve from "@/classes/Curve";
 
 export default {
     name: 'CanvasPanel',
@@ -38,14 +17,7 @@ export default {
             canvasContext: null,
             canvasBoundingRectangle: null,
             curves: [],
-            renderingSettings: {
-                showCurves: true,
-                showControlPoints: true,
-                showControlPolygons: true,
-                curvesEvaluation: 200,
-                canvasWidth: 800,
-                canvasHeight: 600
-            }
+            renderingSettings: new CanvasPanelRenderingSettings(true, true, true, 200, 800, 900)
         }
     },
     mounted() {
@@ -53,35 +25,9 @@ export default {
         this.canvasContext = this.canvasElement.getContext('2d');
         this.canvasBoundingRectangle = this.canvasElement.getBoundingClientRect();
 
-        this.curves = [{
-            controlPoints: [{
-                x: 100,
-                y: 200
-            }, {
-                x: 300,
-                y: 60
-            }, {
-                x: 470,
-                y: 340
-            }, {
-                x: 640,
-                y: 260
-            }],
-            appearance: {
-                curve: {
-                    color: 'pink',
-                    thickness: 4
-                },
-                controlPoints: {
-                    color: 'red',
-                    thickness: 8
-                },
-                controlPolygons: {
-                    color: 'gray',
-                    thickness: 2
-                }
-            }
-        }];
+        let initialCurve = this.getNewCurve();
+        this.curves.push(initialCurve);
+
         this.renderFrame();
 
     },
@@ -154,6 +100,24 @@ export default {
                 currentResult = nextResult;
                 nextResult = iterator.next();
             }
+        },
+        getNewCurve: function() {
+            let controlPoints =[
+                new Point(100, 200),
+                new Point(300, 60),
+                new Point(470, 340),
+                new Point(640, 260)
+            ];
+            let appearance = {
+                curve: new ElementAppearanceSettings('pink', 4),
+                controlPoints: new ElementAppearanceSettings('red', 8),
+                controlPolygons: new ElementAppearanceSettings('gray', 2)
+            };
+
+            return new Curve(controlPoints, appearance);
+        },
+        addCurve: function(curve) {
+            this.curves.push(curve);
         }
     }
 }

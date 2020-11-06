@@ -462,7 +462,7 @@ function drawLines(points: Point[], appearance: ElementAppearanceSettings) {
 function drawCurve(curve: Curve, appearance: ElementAppearanceSettings) {
     const curvePoints: Point[] = [];
     
-    for (let evaluationsPerformed = 0; evaluationsPerformed < renderingSettings.curvesEvaluation; evaluationsPerformed++) {
+    for (let evaluationsPerformed = 0; evaluationsPerformed <= renderingSettings.curvesEvaluation; evaluationsPerformed++) {
         curvePoints.push(deCasteljau(curve.controlPoints, evaluationsPerformed));
     }
 

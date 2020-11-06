@@ -204,6 +204,21 @@ h1,  p {
     margin-bottom: 0.8em;
 }
 
+.footer {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.footer-course {
+    font-size: 1em;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.footer-authors {
+    padding-bottom: 0.75em;
+}
+
 .sl-toast-stack {
     bottom: 0;
     top: auto;

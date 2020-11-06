@@ -97,8 +97,7 @@ let toastAlert: HTMLElement;
     updateCanvas();
 
     canvasElement.addEventListener('click', onCanvasClick);
-    canvasElement.addEventListener('mousedown', onCanvasMouseDown);
-
+    canvasElement.addEventListener('mousedown', onCanvasMouseDown);      
 })();
 
 /* FUNÇÕES DA INTERFACE */
